@@ -1,0 +1,68 @@
+header{
+    grid-area: cabe;
+    background-color: blue;
+}
+aside{
+    grid-area: brac;
+    background-color: green;
+}
+main{
+    grid-area: prin;
+    background-color: red;
+}
+footer{
+    grid-area: roda;
+    background-color: black;
+}
+section{
+    grid-area: secn;
+    background-color: aquamarine;
+    display: none;
+}
+body{
+    display: grid;
+    grid-template-areas: 
+    "cabe cabe"
+    "brac prin"
+    "roda roda";
+    grid-template-rows: 200px 500px 200px;
+    grid-template-columns: 300px auto;
+}
+header img{
+    height: 150px;
+    width: auto;
+}
+@media only screen and (max-width: 820px) {
+    body{
+        grid-template-areas: 
+        "cabe"
+        "brac"
+        "prin"
+        "roda";
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 50px 500px 200px;
+    }   
+    header img{
+        display: none;
+    } 
+}
+@media only screen and (max-width: 480px) {
+    body{
+        grid-template-areas: 
+        "secn"
+        "prin"
+        "roda";
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 500px 100px;
+    }
+    section{
+        display: flex;
+    }
+    aside{
+        display: none;
+    }
+    header{
+        display: none;
+    }
+    
+}
